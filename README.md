@@ -1,6 +1,17 @@
-# mr_tusstar
+# TusStar_FrontEnd
+
+启迪之星招聘系统前端
+
+
+
+## 第三方库
+
+- axios
+
+
 
 ## Project setup
+
 ```
 npm install
 ```
@@ -16,6 +27,7 @@ npm run build
 ```
 
 ### Lints and fixes files
+
 ```
 npm run lint
 ```
