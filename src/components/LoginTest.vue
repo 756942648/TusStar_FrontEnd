@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{ message }}
+    <h1 class="my">{{ message }}</h1>
   </div>
 </template>
 
@@ -11,7 +11,7 @@ export default {
   name: "LoginTest",
   data() {
     return {
-      message: ""
+      message: "我是主页"
     };
   },
   mounted() {
@@ -31,4 +31,10 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.my {
+  text-align: center;
+  color: rebeccapurple;
+  font-size: 90px;
+}
+</style>
