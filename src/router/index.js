@@ -1,7 +1,11 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
-import Home from "@/views/Home";
+import xzh from "@/components/SignupOrdinary";
+import Topimg from "../components/Topimg";
+import Home from "../views/TEST";
+import index from "../views/index";
+import SignupCompany from "../components/SignupCompany";
 
 Vue.use(VueRouter);
 
@@ -13,8 +17,11 @@ VueRouter.prototype.push = function push(location) {
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home
+    component: index
+  },
+  {
+    path: "/SignupCompany",
+    component: SignupCompany
   }
 ];
 

@@ -1,17 +1,24 @@
 <template>
   <div>
-    <h1 class="my">{{ message }}</h1>
+    <h1>{{ message }}</h1>
+    <home></home>
+    <ul>
+      <li v-for="(user, i) in users" :key="i">{{ user }}</li>
+    </ul>
   </div>
 </template>
 
 <script>
 import axios from "axios";
-
+import home from "../views/TEST";
 export default {
-  name: "LoginTest",
+  components: {
+    home
+  },
   data() {
     return {
-      message: "我是主页"
+      message: "真帅啊!!!",
+      users: ["盲僧", "瞎子", "李青"]
     };
   },
   mounted() {
@@ -35,6 +42,6 @@ export default {
 .my {
   text-align: center;
   color: rebeccapurple;
-  font-size: 90px;
+  font-size: 20px;
 }
 </style>
