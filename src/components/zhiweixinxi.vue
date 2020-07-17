@@ -4,7 +4,7 @@
       <div class="popu-category-box bg-light rounded text-center p-4">
         <div class="popu-category-icon mb-3">
           <img
-            src="@/assets/img/logo.png"
+            src="@/assets/img/LOGO.png"
             class="mdi mdi-account d-inline-block rounded-pill h3 text-primary"
           />
         </div>

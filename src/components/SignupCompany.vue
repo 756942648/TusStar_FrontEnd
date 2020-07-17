@@ -40,8 +40,8 @@
         <el-form-item label="所在地区" prop="area">
           <el-input v-model="ruleForm.area"></el-input>
         </el-form-item>
-        <el-form-item label="注册资金" prop="fund">
-          <el-input v-model="ruleForm.fund"></el-input>
+        <el-form-item label="注册资金（元）" prop="fund">
+          <el-input v-model.number="ruleForm.fund"></el-input>
         </el-form-item>
         <el-form
           :inline="true"
@@ -93,6 +93,21 @@
         <el-form-item label="总部位置" prop="headquarters">
           <el-input v-model="ruleForm.headquarters"></el-input>
         </el-form-item>
+
+        <!--        <el-upload-->
+        <!--        class="upload-demo"-->
+        <!--        ref="upload"-->
+        <!--        action="https://jsonplaceholder.typicode.com/posts/"-->
+        <!--        :on-preview="handlePreview"-->
+        <!--        :on-remove="handleRemove"-->
+        <!--        :file-list="fileList"-->
+        <!--        :auto-upload="false">-->
+        <!--          <el-button slot="trigger" size="big" type="primary">选取文件</el-button>-->
+        <!--          <el-button style="margin-left: 10px;" size="big" type="success" @click="submitUpload">上传到服务器</el-button>-->
+        <!--          <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>-->
+        <!--        </el-upload>-->
+
+        <br />
         <el-button
           type="primary"
           class="btn btn-primary w-100 "
@@ -140,6 +155,17 @@ export default {
         callback();
       }
     };
+    var checknum = (rule, value, callback) => {
+      setTimeout(() => {
+        if (!value) {
+          callback();
+        } else if (!Number.isInteger(value)) {
+          callback(new Error("请输入数字值"));
+        } else {
+          callback();
+        }
+      }, 100);
+    };
     return {
       ruleForm: {
         name: "",
@@ -164,7 +190,6 @@ export default {
         ],
         name: [{ required: true, message: "请填写姓名", trigger: "blur" }],
         email: [
-          { required: true, message: "请填写邮箱", trigger: "blur" },
           {
             type: "email",
             message: "请输入正确的邮箱地址",
@@ -172,15 +197,17 @@ export default {
           }
         ],
         phone: [
-          { required: true, message: "请填写密码", trigger: "blur" },
+          { required: false, message: "请填写密码", trigger: "blur" },
           { min: 11, max: 11, message: "请输入正确的手机号", trigger: "blur" }
         ],
+        fund: [{ validator: checknum, trigger: "blur" }],
         password: [{ validator: validatePass, trigger: "blur" }],
         querenpassword: [{ validator: validatePass2, trigger: "blur" }],
         yanzhengma: [
           { required: true, message: "请填写验证码", trigger: "blur" }
         ]
-      }
+      },
+      fileList: []
     };
   },
   methods: {
@@ -201,6 +228,15 @@ export default {
         .catch(error => {
           console.log("错误信息" + error);
         });
+    },
+    submitUpload() {
+      this.$refs.upload.submit();
+    },
+    handleRemove(file, fileList) {
+      console.log(file, fileList);
+    },
+    handlePreview(file) {
+      console.log(file);
     }
   },
   mounted() {
