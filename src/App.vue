@@ -1,18 +1,10 @@
 <template>
-  <div id="app">
-    <!--    <router-view></router-view>-->
-    <SignupOrdinary></SignupOrdinary>
-    <!--    <fasongyanzhengma></fasongyanzhengma>-->
-    <!--    <fabugangwei></fabugangwei>-->
-    <!--    <everyjob></everyjob>-->
-    <!--    <BackToTop></BackToTop>-->
-    <!--    <index></index>-->
-    <!--    <TEST></TEST>-->
-    <!--    <SignupCompany></SignupCompany>-->
-    <!--    <Formyanzheng></Formyanzheng>-->
-    <!--    <router-vizew></router-view>-->
-    <!--    <back-to-top></back-to-top>-->
+  <div >
+  <router-view/>
+    <el-backtop></el-backtop>
   </div>
 </template>
-<script></script>
-<style lang="scss"></style>
+
+<style lang="less">
+
+</style>

@@ -1,17 +1,6 @@
-# TusStar_FrontEnd
-
-启迪之星招聘系统前端
-
-
-
-## 第三方库
-
-- axios
-
-
+# vue-qidi
 
 ## Project setup
-
 ```
 npm install
 ```
@@ -24,12 +13,6 @@ npm run serve
 ### Compiles and minifies for production
 ```
 npm run build
-```
-
-### Lints and fixes files
-
-```
-npm run lint
 ```
 
 ### Customize configuration
